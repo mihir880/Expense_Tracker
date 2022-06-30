@@ -4,7 +4,7 @@ import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = (props) => {
   const expenseDataHandler = (inputExpenseData) => {
-    const expenseData = { ...inputExpenseData, id: Math.random() };
+    const expenseData = { ...inputExpenseData, id: Math.random().toString() };
     //calling parent function (child to parent)
     props.onAddExpense(expenseData);
   };
