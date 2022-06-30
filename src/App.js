@@ -15,25 +15,32 @@ function App() {
       id: ++count,
       expenseTitle: "Bike Insurance",
       expenseAmount: 400.3,
-      expenseDate: new Date(),
+      expenseDate: new Date(2021, 10, 12),
     },
     {
       id: ++count,
       expenseTitle: "Home Insurance",
       expenseAmount: 350.3,
-      expenseDate: new Date(),
+      expenseDate: new Date(2020, 1, 1),
     },
     {
       id: ++count,
       expenseTitle: "Health Insurance",
       expenseAmount: 600.3,
-      expenseDate: new Date(),
+      expenseDate: new Date(2019, 2, 7),
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log("In App.js");
+    console.log(expense);
+    expenses.push(expense);
+    console.log(expenses);
+  };
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
