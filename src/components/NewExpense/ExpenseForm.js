@@ -48,6 +48,7 @@ const ExpenseForm = (props) => {
     setInputDate("");
     //calling parent function (child to parent)
     props.onSaveExpenseData(expenseData);
+    props.stopEditing();
   };
 
   return (
@@ -87,6 +88,7 @@ const ExpenseForm = (props) => {
           </div>
         </div>
         <div className="new-expense__actions">
+          <button type="cancel" onClick={props.stopEditing}>Cancel</button>
           <button type="submit">Add Expense</button>
         </div>
       </form>
